@@ -1,0 +1,159 @@
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Satoshi', sans-serif;
+    color: #121212;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #121212;
+    border-radius: 20px;
+}
+
+
+
+hr {
+    width: 70%;
+    margin: 0 auto;
+}
+
+body:hover > #trailer {
+    opacity: 0.5;
+}
+
+#trailer {
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border: 1px solid #121212;
+    background: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: 0.1s ease-out;
+    pointer-events: none;
+    opacity: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 12px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+header h1 {
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+header ul {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 100px;
+    list-style: none;
+    font-weight: 400;
+}
+
+header ul a {
+    color: #121212;
+    text-decoration: none;
+}
+
+header ul a:hover {
+    font-weight: 500;
+}
+
+#progress-bar {
+    --progress: 0;
+    height: 70px;
+    width: var(--progress);
+    background-color: #121212;
+    position: fixed;
+    z-index: -1;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 200px 0;
+}
+
+.content .title {
+    margin: 120px auto;
+    font-weight: 800;
+}
+
+.content p {
+    margin: 120px auto;
+    font-weight: 400;
+}
+
+.content-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.content-middle h1 {
+    margin: 120px auto;
+    font-weight: 800;
+}
+
+.content-middle p {
+    margin: 120px auto;
+    font-weight: 400;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 24px;
+    width: 100%;
+    background-color: white;
+}
+
+footer .footer-name {
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+footer ul {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 80px;
+    list-style: none;
+    font-weight: 400;
+}
+
+footer ul a{
+    text-decoration: none;
+    color: #121212;
+    font-size: 20px;
+}
+
+footer ul a:hover{
+    font-weight: 500;
+}
