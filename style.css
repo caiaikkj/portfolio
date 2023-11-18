@@ -1,3 +1,12 @@
+html {
+    color-scheme: light dark;
+}
+
+body {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
 html,
 body {
     height: 100%;
@@ -5,6 +14,7 @@ body {
     margin: 0;
     font-family: 'Satoshi', sans-serif;
     color: #121212;
+    
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +39,6 @@ body:hover > #trailer {
 }
 
 #trailer {
-    z-index: 2;
     width: 20px;
     height: 20px;
     overflow: hidden;
@@ -69,7 +78,7 @@ header ul {
     font-weight: 400;
 }
 
-header ul a {
+header a {
     color: #121212;
     text-decoration: none;
 }
@@ -80,7 +89,7 @@ header ul a:hover {
 
 #progress-bar {
     --progress: 0;
-    height: 70px;
+    height: 85px;
     width: var(--progress);
     background-color: #121212;
     position: fixed;
@@ -154,6 +163,54 @@ footer ul a{
     font-size: 20px;
 }
 
-footer ul a:hover{
-    font-weight: 500;
+/* MEDIA QUERY SCREEN SIZE */
+
+@media only screen and (max-width: 750px) {
+    header ul {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        gap: 40px;
+        list-style: none;
+        font-weight: 400;
+    }
+    
+    footer ul {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        gap: 40px;
+        list-style: none;
+        font-weight: 400;
+    }
+
+}
+
+/* MEDIA QUERY DARK MODE */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: white;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: white;
+    }
+    #trailer {
+        border: 1px solid white;
+    }
+    header {
+        background-color: #121212;
+    }
+    header a {
+        color: white;
+    }
+    #progress-bar {
+        background-color: white;
+    }
+    footer {
+        background-color: #121212;
+    }
+    footer ul a {
+        color: white;
+    }
 }
