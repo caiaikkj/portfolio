@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' name='viewport'>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>CC Portfolio | Contact Me!</title>
 </head>
 <body>
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
     <div id="trailer"></div>
     <header>
         <h1 id="cc-logo"><a href="index.html">{ cc }</a></h1>
@@ -46,6 +54,16 @@
         </ul>
     </footer>
     
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader")
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(document.querySelector(".loader"));
+            })
+        })
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
