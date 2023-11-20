@@ -1,5 +1,53 @@
+:root {
+    --textlight: #121212;
+    --textdark: #ededed;
+    --bkglight: white;
+    --bkgdark: #121212;
+}
+
+::selection {
+    color: var(--textdark);
+    background-color: var(--bkgdark);
+}
+
 html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+h1, h2, h3 {
     color-scheme: light dark;
+    text-wrap: balance;
+}
+
+@property --bg-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+}
+
+@keyframes spin {
+    to {
+    --bg-angle: 360deg;
+    }
+}
+
+#cc-logo {
+    animation: spin 2.5s infinite linear paused;
+    background:
+    padding-box,
+    conic-gradient(
+        from var(--bg-angle) in oklch longer hue, oklch(75% 0.37 0) 0 0
+    )
+    border-box;
+    border: 6px solid none;
+    &:hover {
+        animation-play-state: running;
+    };
+    
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 body {
@@ -27,7 +75,83 @@ body {
     border-radius: 20px;
 }
 
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 
+.loader {
+    overflow: hidden;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ededed;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+		load 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    background-image: linear-gradient(to right, #b827fc, #2c90fc, #b8fd33, #fec837, #fd1892);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+            mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+
+@keyframes load {
+    0%, 15% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
 hr {
     width: 70%;
@@ -83,8 +207,16 @@ header a {
     text-decoration: none;
 }
 
-header ul a:hover {
-    font-weight: 500;
+.fancy-link {
+    background-image: linear-gradient(90deg, #121212, #121212);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: background-size 150ms ease-in;
+}
+
+.fancy-link:hover {
+    background-size: 100% 2px;
 }
 
 #progress-bar {
@@ -174,6 +306,10 @@ footer ul a{
         list-style: none;
         font-weight: 400;
     }
+
+    .content {
+        font-size: 80%;
+    }
     
     footer ul {
         display: flex;
@@ -189,28 +325,46 @@ footer ul a{
 /* MEDIA QUERY DARK MODE */
 
 @media (prefers-color-scheme: dark) {
+    ::selection {
+        color: var(--textlight);
+        background-color: var(--bkglight);
+    }
+    .loader {
+        background: #121212;
+    }
     body {
-        color: white;
+        color: var(--textdark);
+        background-color: #121212;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: white;
+        background-color: var(--textdark);
     }
     #trailer {
-        border: 1px solid white;
+        border: 1px solid var(--textdark);
     }
     header {
         background-color: #121212;
     }
     header a {
-        color: white;
+        color: var(--textdark);
+    }
+    .fancy-link {
+        background-image: linear-gradient(90deg, #ededed, #ededed);
+        background-size: 0% 2px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: background-size 150ms ease-in;
+    }
+    .fancy-link:hover {
+        background-size: 100% 2px;
     }
     #progress-bar {
-        background-color: white;
+        background-color: var(--textdark);
     }
     footer {
         background-color: #121212;
     }
     footer ul a {
-        color: white;
+        color: var(--textdark);
     }
 }

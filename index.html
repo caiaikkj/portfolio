@@ -9,18 +9,25 @@
     <title>CC Portfolio</title>
 </head>
 <body>
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
     <div id="trailer"></div>
     <header>
-        <h1><a href="index.html">{ cc }</a></h1>
+        <h1 id="cc-logo"><a href="index.html">{ cc }</a></h1>
         <ul>
             <li>
-                <a href="#">Work</a>
+                <a href="#" class="fancy-link">Work</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="about.html" class="fancy-link">About</a>
             </li>
             <li>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="fancy-link">Contact</a>
             </li>
         </ul>
     </header>
@@ -74,7 +81,16 @@
             </li>
         </ul>
     </footer>
-    
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader")
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(document.querySelector(".loader"));
+            })
+        })
+    </script>
     <script src="scripts.js"></script>
 </body>
 
