@@ -290,7 +290,7 @@ footer ul a{
     font-size: 20px;
 }
 
-/* ABOUT PAGE */
+/* CONTACT PAGE */
 .email-contact {
     display: flex;
     flex-direction: column;
@@ -315,6 +315,21 @@ footer ul a{
 .email-contact p a:hover {
     background-size: 100% 2px;
 }
+
+/* ABOUT PAGE */
+.about-me p {
+    font-size: 16px;
+    text-wrap: balance;
+    line-height: 1.6rem;
+}
+
+.about-me p span {
+    background-color: #121212;
+    color: #ededed;
+    padding: 6px;
+    font-weight: 600;
+}
+
 
 /* MEDIA QUERY SCREEN SIZE */
 
@@ -403,6 +418,11 @@ footer ul a{
         font-size: 20px !important;
         padding-bottom: 120px;
     }
+
+    .about-me p {
+        width: 80%;
+        margin-bottom: 80px;
+    }
 }
 
 /* MEDIA QUERY DARK MODE */
@@ -470,5 +490,9 @@ footer ul a{
     .email-contact p a {
         color: #ededed;
         background-image: linear-gradient(to right, #ededed, #ededed);
+    }
+    .about-me p span {
+        background-color: #ededed;
+        color: #121212;
     }
 }
