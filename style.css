@@ -290,6 +290,32 @@ footer ul a{
     font-size: 20px;
 }
 
+/* ABOUT PAGE */
+.email-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.email-contact p {
+    text-align: left;
+    padding-bottom: 80px;
+}
+.email-contact p a {
+    text-decoration: none;
+    color: #121212;
+    font-weight: 600;
+    background-image: linear-gradient(to right, #121212, #121212);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: background-size 150ms ease-in;
+}
+
+.email-contact p a:hover {
+    background-size: 100% 2px;
+}
+
 /* MEDIA QUERY SCREEN SIZE */
 
 @media only screen and (max-width: 750px) {
@@ -328,9 +354,10 @@ footer ul a{
         font-weight: 800;
     }
     
-    .content p {
+    .content > p {
         margin: auto;
         font-weight: 400;
+        width: 300px;
     }
     
     .content-middle {
@@ -370,6 +397,11 @@ footer ul a{
         gap: 20px;
         list-style: none;
         font-weight: 400;
+    }
+
+    .email-contact > p {
+        font-size: 20px !important;
+        padding-bottom: 120px;
     }
 }
 
@@ -434,5 +466,9 @@ footer ul a{
         -webkit-background-clip: text;
                 background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+    .email-contact p a {
+        color: #ededed;
+        background-image: linear-gradient(to right, #ededed, #ededed);
     }
 }
